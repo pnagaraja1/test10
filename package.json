@@ -45,7 +45,8 @@
     "inquirer": "^1.1.3",
     "moment": "^2.13.0",
     "octonode": "^0.7.6",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "shelljs": "^0.7.4"
   },
   "author": "",
   "license": "ISC"
