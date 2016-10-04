@@ -1,7 +1,7 @@
-var git = require('simple-git') ;
+var git = require('simple-git')(".");
 
 function clone(repo){
-    git.clone(repo, ".");
+    return git.clone(repo, "./output/ngnode");
 }
 
 function add(){
@@ -19,3 +19,10 @@ function push(){
         console.log(msg);
     });
 }
+
+module.exports = {
+    clone: clone,
+    add: add,
+    commit: commit,
+    push: push
+};

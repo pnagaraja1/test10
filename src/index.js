@@ -1,3 +1,4 @@
+#!/Users/vabbasmoha/.nvm/versions/node/v6.5.0/bin/node
 /**
  * Recursive prompt example
  * Allows user to choose when to exit prompt
@@ -5,6 +6,8 @@
 
 'use strict';
 var inquirer = require('inquirer');
+var git = require('./git/git.js');
+
 var output = [];
 
 var questions = [
@@ -15,7 +18,7 @@ var questions = [
 '      (-) \n'+
 '    _(   )_ \n'+
 '    (_`/._)\n'+
-    'Guru welcome thee...\n What type of project is it?',
+    'PVR MAD SPARKS!! welcome thee...\n What type of project is it?',
     choices:['Frontend','Services']
   },
   {
@@ -40,7 +43,9 @@ var questions = [
 
 function ask() {
   inquirer.prompt(questions).then(function (answers) {
-    console.log('bye');
+    console.log('Generating Node Angular Scaffolding Project')
+    console.log(git, git.git);
+    git.clone("git@bitbucket.org:prosto-vsapkrmkad/ng-node.git");
   });
 }
 
