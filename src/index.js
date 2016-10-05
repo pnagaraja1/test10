@@ -87,6 +87,7 @@ function ask() {
             .init()
             .add('./*')
             .commit("first commit!")
+            .removeRemote('origin')
             .addRemote('origin', 'git@github.com:musa4u/'+answers.gitreponame+'.git')
             .push('origin', 'master');
 
