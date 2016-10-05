@@ -46,6 +46,15 @@ function ask() {
     console.log('Generating Node Angular Scaffolding Project')
     console.log(git, git.git);
     git.clone("git@bitbucket.org:prosto-vsapkrmkad/ng-node.git");
+    console.log('Adding Node Angular Project into Repository');
+    git.add();
+
+    
+    console.log('Pushing into Repository');
+    git.push('Initial commit');
+    console.log('Commit the changes into Repository');
+    git.commit();
+
   });
 }
 
