@@ -31,6 +31,16 @@ var questions = [
     }
   },
   {
+    type: 'input',
+    name: 'gitreponame',
+    message: 'Enter your repo name?',
+    when: function (answers) {
+      console.log(answers)
+      return answers.frontendTechType=='Angular';
+
+    }
+  },
+  {
     type: 'list',
     name: 'backendTechType',
     message: 'Which technology you want to develop your services in?',
@@ -43,17 +53,51 @@ var questions = [
 
 function ask() {
   inquirer.prompt(questions).then(function (answers) {
-    console.log('Generating Node Angular Scaffolding Project')
-    git.clone("git@bitbucket.org:prosto-vsapkrmkad/ng-node.git");
+    console.log('Generating Node Angular Scaffolding Project');
+    console.log(answers);
+    //git.clone("git@bitbucket.org:prosto-vsapkrmkad/0ng-node.git");
+
+
+    var github = require('octonode');
+    var simplegit = require('simple-git')();
+    var client = github.client({
+      username: 'musa4u',
+      password: 'Musa@1987'
+    });
+
+    client.get('/user', {}, function (err, status, body, headers) {
+      console.log(body); //json object
+
+// Then we instantiate a client with or without a token (as show in a later section)
+
+      var ghme = client.me();
+
+      ghme.repo({
+        "name": answers.gitreponame,
+        "description": "This is your first repo",
+      }, function (err,b,h) {
+
+
+        console.log("repo is created");
+        console.log(err);
+        console.log(b);
+
+        // starting a new repo
+        simplegit
+            .init()
+            .add('./*')
+            .commit("first commit!")
+            .addRemote('origin', 'git@github.com:musa4u/'+answers.gitreponame+'.git')
+            .push('origin', 'master');
+
+        console.log("Done Done;;;;;;;")
+
+      }); //repo
+
+    });
+
+
     console.log('Adding Node Angular Project into Repository');
-    git.add();
-
-    
-    console.log('Pushing into Repository');
-    git.push('Initial commit');
-    console.log('Commit the changes into Repository');
-    git.commit();
-
   });
 }
 

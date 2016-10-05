@@ -2,7 +2,7 @@ var github = require('octonode');
 var simplegit = require('simple-git')();
 var client = github.client({
     username: 'musa4u',
-    password: ''
+    password: 'Musa@1987'
 });
 
 client.get('/user', {}, function (err, status, body, headers) {
