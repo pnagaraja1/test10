@@ -61,8 +61,8 @@ function ask() {
     var github = require('octonode');
     var simplegit = require('simple-git')();
     var client = github.client({
-      username: 'musa4u',
-      password: 'Musa@1987'
+      username: 'pnagaraja1',
+      password: 'Welcome234'
     });
 
     client.get('/user', {}, function (err, status, body, headers) {
@@ -88,7 +88,7 @@ function ask() {
             .add('./*')
             .commit("first commit!")
             .removeRemote('origin')
-            .addRemote('origin', 'git@github.com:Nationstar/'+answers.gitreponame+'.git')
+            .addRemote('origin', 'git@github.com:pnagaraja1/'+answers.gitreponame+'.git')
             .push('origin', 'master');
 
         console.log("Done Done;;;;;;;")
