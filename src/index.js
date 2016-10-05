@@ -88,7 +88,7 @@ function ask() {
             .add('./*')
             .commit("first commit!")
             .removeRemote('origin')
-            .addRemote('origin', 'git@github.com:musa4u/'+answers.gitreponame+'.git')
+            .addRemote('origin', 'git@github.com:Nationstar/'+answers.gitreponame+'.git')
             .push('origin', 'master');
 
         console.log("Done Done;;;;;;;")
