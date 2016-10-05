@@ -1,5 +1,6 @@
 var git = require('simple-git')(".");
 
+
 function clone(repo){
     return git.clone(repo, "./output/ngnode");
 }

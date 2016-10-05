@@ -1,4 +1,4 @@
-#!/Users/vabbasmoha/.nvm/versions/node/v6.5.0/bin/node
+#! /usr/bin/env node
 /**
  * Recursive prompt example
  * Allows user to choose when to exit prompt
@@ -44,7 +44,6 @@ var questions = [
 function ask() {
   inquirer.prompt(questions).then(function (answers) {
     console.log('Generating Node Angular Scaffolding Project')
-    console.log(git, git.git);
     git.clone("git@bitbucket.org:prosto-vsapkrmkad/ng-node.git");
     console.log('Adding Node Angular Project into Repository');
     git.add();
